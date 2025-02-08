@@ -5,14 +5,16 @@ export interface IUser extends Document {
     firstName: string,
     clerkId: string,
     lastName: string,
-    email: string
+    email: string,
+    imageUrl: string
 }
 
 const userSchema = new Schema<IUser, {}, {}>({
     firstName: String,
     clerkId: String,
     lastName: String,
-    email: String
+    email: String,
+    imageUrl: String
 }, { timestamps: true, });
 
 const User = models?.User || model<IUser>("User", userSchema);
